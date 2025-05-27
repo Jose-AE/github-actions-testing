@@ -26,7 +26,7 @@ jobs:
           project_id: ${{ env.PROJECT_ID }}
           workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
 
-      - name: Configure Docker for Artifact Registry
+      - name: Configure Docker to use Google Artifact Registry
         run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev
 
       - name: Build and Push Docker Image
