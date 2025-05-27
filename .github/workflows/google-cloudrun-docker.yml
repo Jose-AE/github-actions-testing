@@ -7,7 +7,7 @@ env:
   PROJECT_ID: "med-space-c2eba"
   REGION: "us-central1"
   SERVICE: "medspace-backend"
-  REPOSITORY: "medspace-repo" # Add this line
+  REPOSITORY: "medspace-backend" # Add this line
   WORKLOAD_IDENTITY_PROVIDER: "projects/567161984682/locations/global/workloadIdentityPools/github/providers/my-repo"
 jobs:
   deploy:
