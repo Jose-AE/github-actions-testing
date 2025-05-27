@@ -37,13 +37,6 @@ jobs:
           password: ${{ steps.auth.outputs.auth_token }}
           registry: ${{ env.REGION }}-docker.pkg.dev
 
-      - name: Debug Authentication
-        run: |
-          echo "Service account:"
-          gcloud auth list --filter=status:ACTIVE --format="value(account)"
-          echo "Checking Artifact Registry access:"
-          gcloud artifacts repositories list --location=us-central1
-
       - name: Build and Push Docker Image
         run: |
           IMAGE="${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}"
